@@ -21,6 +21,6 @@ cd markdown-editor-frontend
 
 This is a real-time Markdown editor that allows users to format text using Markdown syntax, with a live preview powered by a backend conversion API.
 ```
-# 📝 Real-Time Markdown Editor
+# 📝 Live Demo
 
 🚀 ### **(https://real-time-markdown-editor-frontend.vercel.app/)**
