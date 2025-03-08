@@ -1,9 +1,9 @@
 // src/components/Preview.js
-import React from 'react';
+import React, { forwardRef } from 'react';
 
-const Preview = ({ html }) => {
+const Preview = forwardRef(({ html }, ref) => {
   return (
-    <div className="preview">
+    <div className="preview" ref={ref}>
       {html ? (
         <div dangerouslySetInnerHTML={{ __html: html }} />
       ) : (
@@ -11,6 +11,6 @@ const Preview = ({ html }) => {
       )}
     </div>
   );
-};
+});
 
 export default Preview;

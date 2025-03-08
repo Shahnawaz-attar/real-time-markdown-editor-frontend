@@ -131,3 +131,10 @@ h3 {
   border-radius: 4px; /* Optional: rounding corners for a nicer look */
   /* Add any other styles you like, e.g., a border or box-shadow */
 }
+
+
+.editor textarea,
+.preview {
+  height: 400px; /* Ensure both editor and preview are the same height */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
