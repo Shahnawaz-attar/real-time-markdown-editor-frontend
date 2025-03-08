@@ -18,8 +18,9 @@ This is the frontend for a real-time Markdown editor. It allows users to write M
 git clone https://github.com/YOUR_GITHUB_USERNAME/markdown-editor-frontend.git
 cd markdown-editor-frontend
 
-# 📝 Real-Time Markdown Editor
-
-🚀 **Live Demo:** [Click Here](https://real-time-markdown-editor-frontend.vercel.app/)
 
 This is a real-time Markdown editor that allows users to format text using Markdown syntax, with a live preview powered by a backend conversion API.
+```
+# 📝 Real-Time Markdown Editor
+
+🚀 ### **(https://real-time-markdown-editor-frontend.vercel.app/)**
