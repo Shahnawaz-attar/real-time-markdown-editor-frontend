@@ -1,4 +1,3 @@
-// src/components/Preview.js
 import React, { forwardRef } from 'react';
 
 const Preview = forwardRef(({ html }, ref) => {

@@ -1,4 +1,3 @@
-// hooks/useConvertMarkdown.js
 import { useState, useEffect } from 'react';
 import { convertMarkdown } from '../services/markdownService';
 

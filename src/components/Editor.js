@@ -1,17 +1,13 @@
-// src/components/Editor.js
 import React, { forwardRef } from 'react';
 
 const Editor = forwardRef(({ markdown, setMarkdown, previewRef }, ref) => {
-  // Function to sync scroll positions
   const handleScroll = () => {
     if (!ref.current || !previewRef.current) return;
 
     const editor = ref.current;
     const preview = previewRef.current;
 
-    // Calculate the scroll percentage
     const scrollPercentage = editor.scrollTop / (editor.scrollHeight - editor.clientHeight);
-    // Apply the same percentage to the preview
     preview.scrollTop = scrollPercentage * (preview.scrollHeight - preview.clientHeight);
   };
 
@@ -22,7 +18,7 @@ const Editor = forwardRef(({ markdown, setMarkdown, previewRef }, ref) => {
         ref={ref}
         value={markdown}
         onChange={(e) => setMarkdown(e.target.value)}
-        onScroll={handleScroll} // Listen for scrolling
+        onScroll={handleScroll} 
         placeholder="Type your Markdown or HTML here..."
         rows={10}
       />

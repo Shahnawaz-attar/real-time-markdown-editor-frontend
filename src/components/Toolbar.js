@@ -1,8 +1,6 @@
-// src/components/Toolbar.js
 import React from 'react';
 
 function Toolbar({ markdown, setMarkdown }) {
-  // Helper to insert or wrap selected text
   const wrapSelection = (before, after = before) => {
     const textarea = document.getElementById('editor-textarea');
     if (!textarea) return;
@@ -11,7 +9,6 @@ function Toolbar({ markdown, setMarkdown }) {
     const end = textarea.selectionEnd;
     const selectedText = markdown.substring(start, end);
     
-    // Build new markdown with before/after wrappers
     const newText =
       markdown.substring(0, start) +
       before +
@@ -21,7 +18,6 @@ function Toolbar({ markdown, setMarkdown }) {
       
     setMarkdown(newText);
 
-    // Re-focus and adjust the cursor position after updating text
     setTimeout(() => {
       textarea.focus();
       textarea.selectionStart = textarea.selectionEnd =
@@ -29,11 +25,9 @@ function Toolbar({ markdown, setMarkdown }) {
     }, 0);
   };
 
-  // Button Handlers:
   const handleBold = () => wrapSelection('**', '**');
   const handleItalic = () => wrapSelection('*', '*');
 
-  // Heading: Inserts appropriate number of '#' at beginning of selected text
   const handleHeading = (level = 1) => {
     const hashes = '#'.repeat(level) + ' ';
     wrapSelection(hashes, '');
@@ -42,7 +36,6 @@ function Toolbar({ markdown, setMarkdown }) {
   const handleLink = () => wrapSelection('[', '](https://example.com)');
   const handleCodeBlock = () => wrapSelection('```\n', '\n```');
 
-  // Bulleted List: Prepend each selected line with '- '
   const handleBulletedList = () => {
     const textarea = document.getElementById('editor-textarea');
     if (!textarea) return;
@@ -59,7 +52,6 @@ function Toolbar({ markdown, setMarkdown }) {
     }, 0);
   };
 
-  // Numbered List: Prepend each selected line with '1. '
   const handleNumberedList = () => {
     const textarea = document.getElementById('editor-textarea');
     if (!textarea) return;
@@ -76,7 +68,6 @@ function Toolbar({ markdown, setMarkdown }) {
     }, 0);
   };
 
-  // Blockquote: Prepend each line with '> '
   const handleBlockquote = () => {
     const textarea = document.getElementById('editor-textarea');
     if (!textarea) return;
@@ -93,7 +84,6 @@ function Toolbar({ markdown, setMarkdown }) {
     }, 0);
   };
 
-  // Image: Inserts Markdown image syntax
   const handleImage = () => wrapSelection('![', '](https://example.com/image.png)');
 
   return (
